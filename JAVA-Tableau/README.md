@@ -1,7 +1,5 @@
-# AFPA_java_serie5.1_tableau
-
-Exercice effectué durant la formation Concepteur Developpeur d'Application à l'AFPA.
-Formation de mai 2022 à avril 2023.
+## Exercice en JAVA - Appréhender la notion de collection à travers la gestion d'un tableau ( exercice 5.1 )
+### AFPA - Formation Concepteur Developpeur d'Application (de mai 2022 à avril 2023)
 
 Premier module - POO (langage JAVA)
 Serie 5 - Exercice 1
