@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox alignment="CENTER" prefHeight="293.0" prefWidth="369.0" spacing="20.0" xmlns="http://javafx.com/javafx/18"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.afpa.Controller">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <GridPane prefHeight="349.0" prefWidth="281.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="133.0" minHeight="10.0" prefHeight="94.0" vgrow="SOMETIMES"/>
+            <RowConstraints maxHeight="317.0" minHeight="10.0" prefHeight="255.0" vgrow="SOMETIMES"/>
+        </rowConstraints>
+
+        <Label prefHeight="89.0" prefWidth="392.0" text="Démonstration des cases à cocher et des boutons d'options"/>
+
+        <GridPane prefHeight="232.0" prefWidth="329.0" GridPane.rowIndex="1">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+
+            <CheckBox fx:id="checkbox_modif" mnemonicParsing="false" text="Modifier la couleur"
+                      GridPane.halignment="LEFT" GridPane.valignment="TOP">
+                <GridPane.margin>
+                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+                </GridPane.margin>
+            </CheckBox>
+
+            <GridPane GridPane.columnIndex="1">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints maxHeight="99.0" minHeight="10.0" prefHeight="79.0" vgrow="SOMETIMES"/>
+                    <RowConstraints maxHeight="128.0" minHeight="10.0" prefHeight="128.0" vgrow="SOMETIMES"/>
+                </rowConstraints>
+
+                <Pane fx:id="color_pane" prefHeight="76.0" prefWidth="164.0">
+                    <Label text="La couleur choisie"/>
+                </Pane>
+
+                <GridPane prefHeight="126.0" prefWidth="164.0" GridPane.rowIndex="1">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </padding>
+
+                    <!-- Possible d'intégrer les RadioButton dans un groupe mais ils ne seront pas deselectionnable ? -->
+                    <fx:define>
+                        <ToggleGroup fx:id="group"/>
+                    </fx:define>
+
+
+                    <RadioButton fx:id="modif_rouge" mnemonicParsing="false" onAction="#onCheckRouge" text="Rouge"
+                                 toggleGroup="$group" GridPane.rowIndex="1"/>
+
+                    <RadioButton fx:id="modif_vert" mnemonicParsing="false" onAction="#onCheckVert" text="Vert"
+                                 toggleGroup="$group" GridPane.rowIndex="2"/>
+
+                    <RadioButton fx:id="modif_bleu" mnemonicParsing="false" onAction="#onCheckBlue" text="Bleu"
+                                 toggleGroup="$group" GridPane.rowIndex="3"/>
+
+                    <RadioButton fx:id="modif_aucune" mnemonicParsing="false" onAction="#onUnCheck" text="Aucune"
+                                 toggleGroup="$group" GridPane.rowIndex="4"/>
+
+                    <Label text="Couleur"/>
+
+                </GridPane>
+            </GridPane>
+        </GridPane>
+    </GridPane>
+</VBox>
