@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.CheckBox?>
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="fr.afpa.Controller">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <GridPane alignment="CENTER" onKeyPressed="#onHelloButtonClick" prefHeight="198.0" prefWidth="254.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+        </rowConstraints>
+
+        <Label fx:id="affichageFinal" prefHeight="17.0" prefWidth="90.0" GridPane.columnIndex="1"
+               GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <GridPane.margin>
+                <Insets left="20.0" right="20.0"/>
+            </GridPane.margin>
+        </Label>
+
+        <Button onAction="#onHelloButtonClick" text="Convertir" GridPane.halignment="CENTER" GridPane.rowIndex="1"
+                GridPane.valignment="CENTER">
+            <GridPane.margin>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+            </GridPane.margin>
+        </Button>
+
+        <TextField fx:id="saisi" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <GridPane.margin>
+                <Insets left="20.0" right="20.0"/>
+            </GridPane.margin>
+        </TextField>
+
+        <GridPane GridPane.columnIndex="1">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <CheckBox fx:id="case1" mnemonicParsing="false" text="°C to °F">
+                <padding>
+                    <Insets left="20.0" right="20.0"/>
+                </padding>
+            </CheckBox>
+
+            <CheckBox fx:id="case2" mnemonicParsing="false" text="°F to °C" GridPane.rowIndex="1">
+                <padding>
+                    <Insets left="20.0" right="20.0"/>
+                </padding>
+            </CheckBox>
+
+        </GridPane>
+    </GridPane>
+</VBox>
