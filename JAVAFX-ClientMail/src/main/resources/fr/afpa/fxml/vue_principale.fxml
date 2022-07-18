@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="551.0" prefWidth="1057.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.afpa.controller.ControllerVuePrincipale">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+        <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="1000.0" minHeight="100.0" prefHeight="400.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+    </rowConstraints>
+
+    <MenuBar prefHeight="25.0" prefWidth="788.0">
+
+        <Menu mnemonicParsing="false" text="Message">
+
+            <MenuItem fx:id="btnMenuNew" mnemonicParsing="false" onAction="#onNewBtn" text="Nouveau" />
+
+            <MenuItem fx:id="btnMenuOpen" mnemonicParsing="false" onAction="#onOpenBtn" text="Ouvrir ..." />
+
+            <SeparatorMenuItem mnemonicParsing="false" />
+
+            <MenuItem fx:id="btnMenuSend" mnemonicParsing="false" onAction="#onSendBtn" text="Envoyer ">
+                <graphic>
+                    <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" text="F2" textAlignment="RIGHT" />
+                </graphic>
+            </MenuItem>
+
+            <SeparatorMenuItem mnemonicParsing="false" />
+
+            <MenuItem fx:id="btnMenuQuit" mnemonicParsing="false" onAction="#onQuitBtn" text="Quitter" />
+
+        </Menu>
+
+        <Menu mnemonicParsing="false" text="Options">
+
+            <MenuItem mnemonicParsing="false" text="Paramètres" />
+
+        </Menu>
+
+        <Menu mnemonicParsing="false" text="?">
+
+            <MenuItem mnemonicParsing="false" onAction="#onInfoBtn" text="A propos" />
+
+        </Menu>
+
+    </MenuBar>
+
+    <GridPane GridPane.rowIndex="1">
+        <columnConstraints>
+            <ColumnConstraints halignment="CENTER" maxWidth="20.0" minWidth="20.0" prefWidth="20.0" />
+            <ColumnConstraints halignment="CENTER" maxWidth="45.0" minWidth="45.0" prefWidth="45.0" />
+            <ColumnConstraints halignment="CENTER" maxWidth="45.0" minWidth="45.0" prefWidth="45.0" />
+            <ColumnConstraints halignment="CENTER" maxWidth="100.0" minWidth="50.0" prefWidth="92.0" />
+            <ColumnConstraints maxWidth="200.0" minWidth="20.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="RIGHT" maxWidth="50.0" minWidth="30.0" prefWidth="50.0" />
+            <ColumnConstraints maxWidth="500.0" minWidth="50.0" prefWidth="300.0" />
+            <ColumnConstraints halignment="RIGHT" maxWidth="50.0" minWidth="30.0" prefWidth="50.0" />
+            <ColumnConstraints maxWidth="500.0" minWidth="200.0" prefWidth="300.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="45.0" minHeight="45.0" prefHeight="45.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+
+        <Button fx:id="btnMainNew" alignment="CENTER" mnemonicParsing="false" onAction="#onNewBtn" prefHeight="45.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+            <GridPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
+            </GridPane.margin>
+            <graphic>
+                <ImageView fitHeight="20" preserveRatio="true">
+                    <Image url="@../icon/new.png" />
+                </ImageView>
+            </graphic>
+        </Button>
+
+        <Button fx:id="btnMainOpen" mnemonicParsing="false" onAction="#onOpenBtn" prefHeight="45.0" prefWidth="45.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <GridPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
+            </GridPane.margin>
+            <graphic>
+                <ImageView fitHeight="20" preserveRatio="true">
+                    <Image url="@../icon/open.png" />
+                </ImageView>
+            </graphic>
+        </Button>
+
+        <Button fx:id="btnMainSend" mnemonicParsing="false" onAction="#onSendBtn" prefHeight="45.0" prefWidth="45.0" GridPane.columnIndex="3">
+            <GridPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
+            </GridPane.margin>
+            <graphic>
+                <ImageView fitHeight="20" preserveRatio="true">
+                    <Image url="@../icon/send.png" />
+                </ImageView>
+            </graphic>
+        </Button>
+
+        <TextField fx:id="textObjet" GridPane.columnIndex="6">
+            <GridPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </GridPane.margin>
+        </TextField>
+
+        <ComboBox fx:id="cmboxContact" maxWidth="500.0" minWidth="200.0" onKeyPressed="#enterOnComboBox" prefWidth="300.0" GridPane.columnIndex="8" GridPane.halignment="CENTER">
+            <GridPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </GridPane.margin>
+        </ComboBox>
+
+        <Label text="Sujet" GridPane.columnIndex="5">
+            <GridPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </GridPane.margin>
+        </Label>
+
+        <Label text="Pour" GridPane.columnIndex="7">
+            <GridPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </GridPane.margin>
+        </Label>
+
+    </GridPane>
+
+    <Button fx:id="btnBackSend" mnemonicParsing="false" onAction="#onSendBtn" text="Envoyer le message" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+        <GridPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
+        </GridPane.margin>
+    </Button>
+
+    <TextArea fx:id="textMessage" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+        <GridPane.margin>
+            <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+        </GridPane.margin>
+    </TextArea>
+
+</GridPane>
